@@ -1,0 +1,59 @@
+<core:View controllerName="zv.research.documents.controller.App" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%" xmlns:unified="sap.ui.unified">
+	<Page title="{i18n>title}" class="sapUiContentPadding">
+		<content>
+			<VBox>
+				<items>
+					<unified:FileUploader
+						id="idFileUploader"
+						
+						value="{DocumentData>/Value}"
+						uploadUrl="{DocumentData>/UploadUrl}"
+						
+						change="onFileUploaderChange"
+						
+						uploadOnChange="false"
+						sameFilenameAllowed="false"
+						buttonText="Durchsuchen..."
+						placeholder="Datei auswählen"
+						validationSuccess=""
+						validationError=""
+						parseError=""
+						formatError=""
+						uploadComplete="onUploadComplete"
+						typeMissmatch=""
+						fileSizeExceed=""
+						fileAllowed=""
+						uploadProgress=""
+						uploadAborted=""
+						filenameLengthExceed=""
+						uploadStart="">
+					</unified:FileUploader>
+					
+					<Button text="Upload this file" press="onPressUpload" class="sapUiSmallMarginBottom"></Button>
+					
+					
+					<Label text="Value:"></Label>
+					<Text text="{DocumentData>/Value}" class="sapUiSmallMarginBottom"></Text>
+					
+					<Label text="UploadUrl:"></Label>
+					<Text text="{DocumentData>/UploadUrl}" class="sapUiSmallMarginBottom"></Text>
+					
+					
+					<Label text="FileName:"></Label>
+					<Text text="{DocumentData>/FileName}" class="sapUiSmallMarginBottom"></Text>
+					
+					<Label text="FileType:"></Label>
+					<Text text="{DocumentData>/FileType}" class="sapUiSmallMarginBottom"></Text>
+					
+					<Label text="FileSize:"></Label>
+					<Text text="{DocumentData>/FileSize}" class="sapUiSmallMarginBottom"></Text>
+					
+					<Label text="FileModifiedLast:"></Label>
+					<Text text="{DocumentData>/FileModifiedLast}" class="sapUiSmallMarginBottom"></Text>
+					
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</core:View>
